@@ -1,0 +1,49 @@
+body {
+   background: url("https://static.vecteezy.com/ti/vecteur-libre/p1/16124733-poker-et-casino-carte-a-jouer-fond-noir-vectoriel.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto 0;
+    text-align: center;
+    border: 1px solid transparent;
+    background: radial-gradient(rgba(91, 244, 91, 0.55), rgba(20, 119, 20, 0.37));
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.title {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.96);
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+    margin: 30px 0;
+    color: #faf6f6;
+}
+
+.btn {
+    margin-top: 30px;
+}
+
+.button {
+    width: 200px;
+    height: 40px;
+    background-color: rgba(102, 200, 90, 0.7);
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.button:hover {
+    background-color: rgba(44, 202, 25, 0.7);
+}
+
+.button:active {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
