@@ -9,8 +9,9 @@ interface ICardToPlay {
 }
 
 const App = () => {
-
     const [someCards, setSomeCards] = useState<ICardToPlay[]>([]);
+    const [amountCardDeck, setAmountCardDeck] = useState<number>(52);
+
 
     const cards = someCards.map((card, index) => {
         return (
@@ -18,10 +19,31 @@ const App = () => {
         );
     });
 
+    const resetGame = () => {
+        setSomeCards([]);
+        setAmountCardDeck(52);
+    };
+
+
     const getFifthCards = () => {
+        if (amountCardDeck === 0) {
+            resetGame();
+            return alert('Игра закончена! Если хотите продолжить игру нажмите на кнопку раздать карты!!!');
+        }
+
         const cardDeck = new CardDeck();
-        const lastCards = cardDeck.getCards(5);
-        setSomeCards(lastCards);
+
+        let lastCards:ICardToPlay[];
+
+        if (amountCardDeck > someCards.length) {
+            lastCards = cardDeck.getCards(5);
+            setSomeCards(lastCards);
+            setAmountCardDeck(amountCardDeck - 5);
+        } else {
+            lastCards = cardDeck.getCards(amountCardDeck);
+            setSomeCards(lastCards);
+            setAmountCardDeck(0);
+        }
     };
 
 
